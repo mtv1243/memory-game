@@ -26,16 +26,22 @@ user clicks
     }
 */
 
+//GLOBAL VARIABLES
 let cardHolder = document.getElementById('card-holder');
 let messageEl = document.querySelector('.message');
 let buttonEl = document.querySelector('.play-again');
 
 let choices = [];
 //count down the number of matches left to make
+// must be an even number
 let numbers = [0,0,1,1,2,2,3,3,4,4];
 let randNumbers;
 let counter = numbers.length/2;
 
+// shuffle the cards to begin
+playAgain();
+
+// check if the numbers in the cards match
 cardHolder.addEventListener('click', (event)=>{
 
   let target = event.target;
@@ -50,12 +56,8 @@ cardHolder.addEventListener('click', (event)=>{
   }
 })
 
-buttonEl.addEventListener('click', (event)=>{
-
-  let target = event.target;
-  playAgain();
-
-})
+// shuffle the cards and hide them when click the button
+buttonEl.addEventListener('click', playAgain());
 
 //--------
 function checkMatch(array) {
