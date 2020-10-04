@@ -1,6 +1,9 @@
 body {
   font-family: sans-serif;
-  background-color: rgb(58, 141, 42);
+  background-color: #3a8d2a;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
 }
 
 #card-holder {
@@ -11,7 +14,6 @@ body {
   justify-content: center;
   width: 90%;
   max-width: 915px;
-  margin: 0 auto;
 }
 
 .card {
@@ -32,20 +34,38 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  height: 153px;
-  width: 102px;
+  height: 128px;
+  width: 85px;
   border: 1px solid #000;
   color: #000;
-  margin: 25px;
+  margin: 14px;
 }
 
 .outline:hover {
   box-shadow: 0px 0px 10px rgba(0,0,0,.4);
 }
 
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;;
+  /* position: fixed; */
+  /* top: 30px; */
+  /* left: 30px; */
+  width: 130px;
+  height: 130px;
+  background-color: #145207;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
 .message {
-  position: fixed;
-  top: 50%;
+  width: 100px;
+  display: block;
+  height: 170px;
+  margin: 0;
 }
 
 .play-again {
@@ -55,6 +75,12 @@ body {
   display: inline-block;
   padding: 10px;
   cursor: pointer;
+  margin: 10px 0px;
+  background-color: #fff;
+}
+
+.play-again:hover {
+  background-color: #fefefe;
 }
 
 h4.hidden {
@@ -75,4 +101,18 @@ h4.hidden {
 .matched {
   background-color: #fefefe;
   pointer-events: none;
+}
+
+.match-try {
+  background-image: url('./emoji-try-alpha.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.match-success {
+  background-image: url('./emoji-match-alpha.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

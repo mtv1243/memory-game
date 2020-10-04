@@ -66,7 +66,8 @@ function checkMatch(array) {
     //if it's a match
     if (array[0].innerHTML === array[1].innerHTML) {
     console.log('pair!');
-    messageEl.innerHTML = 'MATCH!';
+    messageEl.classList.remove('match-try');
+    messageEl.classList.add('match-success');
     choices.forEach((index)=>{
       index.classList.add('matched');
     })
@@ -76,12 +77,14 @@ function checkMatch(array) {
     //if it's not a match
     } else {
       reset();
+      messageEl.classList.add('match-try');
+      messageEl.classList.remove('match-success');
     }
   }
 }
 //-------
 function reset(){
-  messageEl.innerHTML = 'TRY AGAIN...';
+  messageEl.classList.add('match-try');
   cardHolder.classList.add('disable');
   setTimeout(()=>{
     cardHolder.classList.remove('disable');
@@ -95,7 +98,6 @@ function reset(){
 //------
 function checkWin() {
   if(counter === 0) {
-    messageEl.innerHTML = 'YOU WIN!!!'
     buttonEl.classList.remove('hidden');
   }
 }
