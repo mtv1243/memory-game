@@ -34,7 +34,7 @@ let buttonEl = document.querySelector('.play-again');
 let choices = [];
 //count down the number of matches left to make
 // must be an even number
-let numbers = [0,0,1,1,2,2,3,3,4,4];
+let numbers = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10];
 let randNumbers;
 let counter = numbers.length/2;
 
@@ -44,12 +44,12 @@ playAgain();
 // check if the numbers in the cards match
 cardHolder.addEventListener('click', (event)=>{
 
-  let target = event.target;
-  let cardClasses = target.classList;
+  let card = event.target.children[0];
+  let cardClasses = card.classList;
 
-  if (target.classList.contains('card')) {
+  if (card.classList.contains('card')) {
     // counter++;
-    choices.push(target);
+    choices.push(card);
     cardClasses.remove('hidden');
     console.log(choices);
     checkMatch(choices);
@@ -57,7 +57,7 @@ cardHolder.addEventListener('click', (event)=>{
 })
 
 // shuffle the cards and hide them when click the button
-buttonEl.addEventListener('click', playAgain());
+buttonEl.addEventListener('click', playAgain);
 
 //--------
 function checkMatch(array) {
@@ -68,7 +68,7 @@ function checkMatch(array) {
     console.log('pair!');
     messageEl.innerHTML = 'MATCH!';
     choices.forEach((index)=>{
-      index.classList.add('disable');
+      index.classList.add('matched');
     })
     choices = [];
     counter--;
@@ -81,8 +81,8 @@ function checkMatch(array) {
 }
 //-------
 function reset(){
-  cardHolder.classList.add('disable');
   messageEl.innerHTML = 'TRY AGAIN...';
+  cardHolder.classList.add('disable');
   setTimeout(()=>{
     cardHolder.classList.remove('disable');
     choices.forEach((index)=>{
@@ -90,7 +90,7 @@ function reset(){
     })
     choices = [];
     console.log(choices);
-  }, 1500);
+  }, 1000);
 }
 //------
 function checkWin() {
