@@ -58,6 +58,7 @@ body {
   height: 170px;
   background-color: #145207;
   border-radius: 5px;
+  border: 1px solid #000;
   padding: 10px;
   margin-top: 20px;
 }
@@ -122,7 +123,7 @@ h4.hidden {
   background-repeat: no-repeat;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 426px) {
   body {
     flex-direction: column;
     align-items: center;
