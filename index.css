@@ -14,6 +14,9 @@ body {
   justify-content: center;
   width: 90%;
   max-width: 915px;
+  border: 1px solid;
+  margin: 20px;
+  background-color: #145207;
 }
 
 .card {
@@ -39,10 +42,11 @@ body {
   border: 1px solid #000;
   color: #000;
   margin: 14px;
+  cursor: pointer;
 }
 
 .outline:hover {
-  box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+  box-shadow: 0px 0px 10px rgba(255,255,255,.4);
 }
 
 .message-wrapper {
@@ -50,11 +54,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;;
-  /* position: fixed; */
-  /* top: 30px; */
-  /* left: 30px; */
   width: 130px;
-  height: 130px;
+  height: 170px;
   background-color: #145207;
   border-radius: 5px;
   padding: 10px;
@@ -66,6 +67,10 @@ body {
   display: block;
   height: 170px;
   margin: 0;
+}
+
+.score-wrapper {
+  color: #fff;
 }
 
 .play-again {
@@ -116,3 +121,50 @@ h4.hidden {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+@media only screen and (max-width: 425px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .message-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 85%;
+    height: 45px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .message {
+    height: 45px;
+    width: 45px;
+  }
+
+  .outline {
+    height: 52px;
+    width: 34px;
+  }
+
+  .card {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+  }
+}
+
+/* @media only screen and (max-width: 425px) {
+  .outline {
+    height: 50px;
+    width: 33px;
+  }
+
+  .card {
+    font-size: 3rem;
+  }
+
+  .message-wrapper {
+    width: 72px;
+  }
+} */

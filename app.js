@@ -30,6 +30,7 @@ user clicks
 let cardHolder = document.getElementById('card-holder');
 let messageEl = document.querySelector('.message');
 let buttonEl = document.querySelector('.play-again');
+let scoreEl = document.querySelector('.score');
 
 let choices = [];
 //count down the number of matches left to make
@@ -37,6 +38,7 @@ let choices = [];
 let numbers = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10];
 let randNumbers;
 let counter = numbers.length/2;
+let score = 0;
 
 // shuffle the cards to begin
 playAgain();
@@ -68,6 +70,9 @@ function checkMatch(array) {
     console.log('pair!');
     messageEl.classList.remove('match-try');
     messageEl.classList.add('match-success');
+    score++;
+    console.log(score);
+    scoreEl.innerHTML = score;
     choices.forEach((index)=>{
       index.classList.add('matched');
     })
@@ -120,5 +125,7 @@ function playAgain() {
   })
   buttonEl.classList.add('hidden');
   messageEl.innerHTML = '';
+  score = 0;
+  scoreEl.innerHTML = 0;
   counter = numbers.length/2;
 }
