@@ -35,7 +35,7 @@ let scoreEl = document.querySelector('.score');
 let choices = [];
 //count down the number of matches left to make
 // must be an even number
-let numbers = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10];
+let numbers = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J'];
 let randNumbers;
 let counter = numbers.length/2;
 let score = 0;
